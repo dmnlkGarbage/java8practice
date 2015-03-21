@@ -20,6 +20,11 @@ public class StreamSample {
 
         NoArg noArg = () -> System.out.println("noarg");
         noArg.print();
+
+
+        Calc calc = (a, b) -> {return a + b;};
+        Integer calcresult = calc.calc(1, 3);
+        System.out.println(calcresult);
     }
 
     // functionalinterfaceアノテーションをつけると、lambdaに使える
@@ -34,4 +39,9 @@ public class StreamSample {
         public void print();
     }
 
+    //戻り値あるメソッド
+    @FunctionalInterface
+    private interface Calc {
+        public Integer calc(Integer a, Integer b);
+    }
 }
