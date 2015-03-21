@@ -1,9 +1,5 @@
 package com.github.dmnlk;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * Created by masaki on 2015/03/15.
  */
@@ -22,9 +18,9 @@ public class StreamSample {
         noArg.print();
 
 
-        Calc calc = (a, b) -> {return a + b;};
-        Integer calcresult = calc.calc(1, 3);
-        System.out.println(calcresult);
+        Calc calc = (a, b) ->  a + b;
+        Integer calcResult = calc.calc(1, 3);
+        System.out.println(calcResult);
     }
 
     // functionalinterfaceアノテーションをつけると、lambdaに使える
