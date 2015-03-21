@@ -9,8 +9,14 @@ import java.util.List;
  */
 public class StreamSample {
     public static void main(String[] args) {
+        //一行で
         Hello hello = (String str) -> System.out.println(str);
         hello.show("lambda");
+
+
+        //もっと簡素に
+        Hello hello1 = str ->System.out.println(str);
+        hello.show("lambda2");
     }
 
     // functionalinterfaceアノテーションをつけると、lambdaに使える
