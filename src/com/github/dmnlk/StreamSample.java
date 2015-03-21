@@ -9,9 +9,13 @@ import java.util.List;
  */
 public class StreamSample {
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>(Arrays.asList(1,2,3));
-        for (Integer a : list) {
-            System.out.println(a);
-        }
+        Hello hello = (String str) -> System.out.println(str);
+        hello.show("lambda");
+    }
+
+    // functionalinterfaceアノテーションをつけると、lambdaに使える
+    @FunctionalInterface
+    private interface Hello {
+        public void show(String str);
     }
 }
