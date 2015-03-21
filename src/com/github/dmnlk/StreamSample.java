@@ -19,8 +19,14 @@ public class StreamSample {
 
 
         Calc calc = (a, b) ->  a + b;
+        // このままNullいれると死ぬ
         Integer calcResult = calc.calc(1, 3);
         System.out.println(calcResult);
+
+        // null入れてもおっけー
+        Calc nullableCalc = (a, b) -> (a == null || b == null) ? 0 : a + b;
+        System.out.println(nullableCalc.calc(null, 2));
+
     }
 
     // functionalinterfaceアノテーションをつけると、lambdaに使える
