@@ -17,6 +17,9 @@ public class StreamSample {
         //もっと簡素に
         Hello hello1 = str ->System.out.println(str);
         hello.show("lambda2");
+
+        NoArg noArg = () -> System.out.println("noarg");
+        noArg.print();
     }
 
     // functionalinterfaceアノテーションをつけると、lambdaに使える
@@ -24,4 +27,11 @@ public class StreamSample {
     private interface Hello {
         public void show(String str);
     }
+
+    // 引数ないメソッドの場合
+    @FunctionalInterface
+    private interface NoArg {
+        public void print();
+    }
+
 }
