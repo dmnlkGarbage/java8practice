@@ -8,6 +8,7 @@ public class DateUtilTest {
 
     @Test
     public void testGetNowTimestamp() throws Exception {
+        System.out.println(DateUtil.getNowTimestamp());
         assertTrue(true);
     }
 }
