@@ -9,4 +9,8 @@ public class DateUtil {
     public static Timestamp getNowTimestamp() {
         return  new Timestamp(System.currentTimeMillis());
     }
+
+    public static String parseTimeString(String dateString) {
+        return null;
+    }
 }

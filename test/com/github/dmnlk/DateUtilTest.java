@@ -13,4 +13,9 @@ public class DateUtilTest {
         Timestamp nowTimestamp = DateUtil.getNowTimestamp();
         assertTrue(nowTimestamp instanceof  Timestamp);
     }
+
+    @Test
+    public void testParseTimeString() throws Exception {
+        DateUtil.parseTimeString("2015-05-05");
+    }
 }
