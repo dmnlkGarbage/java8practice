@@ -27,6 +27,13 @@ public class StreamSample {
         Calc nullableCalc = (a, b) -> (a == null || b == null) ? 0 : a + b;
         System.out.println(nullableCalc.calc(null, 2));
 
+
+        DoSomethingInterface dosome = () -> doDosome();
+        dosome.doSomething();
+    }
+
+    private static void doDosome() {
+        System.out.println("dodo");
     }
 
     // functionalinterfaceアノテーションをつけると、lambdaに使える
@@ -45,5 +52,10 @@ public class StreamSample {
     @FunctionalInterface
     private interface Calc {
         public Integer calc(Integer a, Integer b);
+    }
+
+    @FunctionalInterface
+    public  interface DoSomethingInterface {
+        void doSomething();
     }
 }
