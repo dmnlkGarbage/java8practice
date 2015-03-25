@@ -28,9 +28,19 @@ public class StreamSample {
         System.out.println(nullableCalc.calc(null, 2));
 
 
-        DoSomethingInterface dosome = () -> doDosome();
-        dosome.doSomething();
+        DoSomethingInterface dosome = (a) -> doDosome();
+        dosome.doSomething(2);
+
+        GetInterface<DoSomethingInterface> getInterface = () ->(a) -> System.out.println("hello" + a);
+        DoSomethingInterface doSomethingInterface = getInterface.get();
+        doSomethingInterface.doSomething(2);
     }
+
+    @FunctionalInterface
+    public  interface  GetInterface<T> {
+        T get();
+    }
+
 
     private static void doDosome() {
         System.out.println("dodo");
@@ -56,6 +66,6 @@ public class StreamSample {
 
     @FunctionalInterface
     public  interface DoSomethingInterface {
-        void doSomething();
+        void doSomething(int a);
     }
 }
