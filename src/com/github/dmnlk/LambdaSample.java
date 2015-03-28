@@ -3,7 +3,7 @@ package com.github.dmnlk;
 /**
  * Created by masaki on 2015/03/15.
  */
-public class StreamSample {
+public class LambdaSample {
     public static void main(String[] args) {
         //一行で
         Hello hello = (String str) -> System.out.println(str);
