@@ -1,6 +1,8 @@
 package com.github.dmnlk;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 /**
@@ -22,5 +24,52 @@ public class StreamSample {
         Stream<String> stringStream2 = stringStream1.filter(value -> !value.equals("い"));
         stringStream2.forEach(val -> System.out.println(val));
 
+
+       generateTAccountList().stream().mapToInt(e -> e.getAccountId()).forEach(a -> System.out.println(a));
+
+    }
+    public static List<TAccount> generateTAccountList() {
+        List<TAccount> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            TAccount gen = new TAccount(i * 1000, "gen", i + 1);
+            list.add(gen);
+        }
+        return list;
+    }
+}
+
+
+class TAccount {
+    private int accountId;
+    private String nickName;
+    private int age;
+    public int getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public TAccount(int accountId, String nickName, int age) {
+        this.accountId = accountId;
+        this.nickName = nickName;
+        this.age = age;
     }
 }
