@@ -25,10 +25,13 @@ public class StreamSample {
         stringStream2.forEach(val -> System.out.println(val));
 
 
-       generateTAccountList().stream().mapToInt(e -> e.getAccountId()).forEach(a -> System.out.println(a));
+        generateTAccountList().stream().mapToInt(e -> e.getAccountId()).forEach(a -> System.out.println(a));
+        generateTAccountList().forEach(a -> System.out.println(a));
+        double asDouble = generateTAccountList().stream().mapToInt(e -> e.getAccountId()).average().getAsDouble();
+        System.out.println(asDouble);
 
     }
-    public static List<TAccount> generateTAccountList() {
+    private static List<TAccount> generateTAccountList() {
         List<TAccount> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             TAccount gen = new TAccount(i * 1000, "gen", i + 1);
@@ -40,6 +43,15 @@ public class StreamSample {
 
 
 class TAccount {
+    @Override
+    public String toString() {
+        return "TAccount{" +
+                "accountId=" + accountId +
+                ", nickName='" + nickName + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
     private int accountId;
     private String nickName;
     private int age;
