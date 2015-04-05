@@ -17,7 +17,7 @@ public class OptionalSample {
 
         //java8
         Optional<String> optionalHoge = Optional.ofNullable(getHoge());
-        optionalHoge.isPresent(s -> System.out.println(s));
+        optionalHoge.ifPresent(s -> System.out.println(s.length()));
     }
 
     // なんかnull返すかもしれないメソッド
