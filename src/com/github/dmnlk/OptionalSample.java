@@ -18,10 +18,16 @@ public class OptionalSample {
         //java8
         Optional<String> optionalHoge = Optional.ofNullable(getHoge());
         optionalHoge.ifPresent(s -> System.out.println(s.length()));
+
+        //mapをつかうと値を返せる
+        Optional<String> optional = Optional.ofNullable(getHoge());
+        Optional<Integer> optInt = optional.map(s -> s.length());
+        optInt.ifPresent(i -> System.out.println(i));
+
     }
 
     // なんかnull返すかもしれないメソッド
     public static String getHoge() {
-        return  null;
+        return  "test";
     }
 }
