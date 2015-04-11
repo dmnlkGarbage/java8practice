@@ -29,11 +29,14 @@ public class OptionalSample {
         Optional<String> host = Optional.ofNullable(getEnv("host"));
         String h = host.orElse("localhost");
         System.out.println(h);
+        // メソッド渡せる
+        String s = host.orElseGet(() -> "please set host address");
+        System.out.println(s);
 
     }
 
     public static String getEnv(String envType) {
-        return  null;
+        return  "127.0.0.1";
     }
 
     // なんかnull返すかもしれないメソッド
