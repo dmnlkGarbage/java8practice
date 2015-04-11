@@ -24,6 +24,16 @@ public class OptionalSample {
         Optional<Integer> optInt = optional.map(s -> s.length());
         optInt.ifPresent(i -> System.out.println(i));
 
+
+        //nullの場合にデフォルト値とか
+        Optional<String> host = Optional.ofNullable(getEnv("host"));
+        String h = host.orElse("localhost");
+        System.out.println(h);
+
+    }
+
+    public static String getEnv(String envType) {
+        return  null;
     }
 
     // なんかnull返すかもしれないメソッド
