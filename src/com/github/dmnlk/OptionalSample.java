@@ -37,10 +37,11 @@ public class OptionalSample {
       //  String po = port.orElseThrow(IllegalArgumentException::new);
 //        System.out.println(po);
 
-        TAccountInfo tAccountInfo = new TAccountInfo(1, "name", 2);
+        TAccountInfo tAccountInfo = new TAccountInfo(1, "name", 2, Optional.<String>empty());
         Optional<TAccountInfo> tAccountInfoOptional = Optional.ofNullable(tAccountInfo);
         Optional<Integer> accountId = tAccountInfoOptional.map(TAccountInfo::getAccountId);
         System.out.println(accountId.orElse(-1));
+
 
 
     }
@@ -61,11 +62,21 @@ class TAccountInfo {
     private int accountId;
     private String name;
     private int age;
+    private Optional<String> subInfo;
 
-    public TAccountInfo(int accountId, String name, int age) {
+    public Optional<String> getSubInfo() {
+        return subInfo;
+    }
+
+    public void setSubInfo(Optional<String> subInfo) {
+        this.subInfo = subInfo;
+    }
+
+    public TAccountInfo(int accountId, String name, int age, Optional<String> subInfo) {
         this.accountId = accountId;
         this.name = name;
         this.age = age;
+        this.subInfo = subInfo;
     }
 
     public int getAccountId() {
