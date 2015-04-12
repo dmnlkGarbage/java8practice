@@ -32,10 +32,16 @@ public class OptionalSample {
         // メソッド渡せる
         String s = host.orElseGet(() -> "please set host address");
         System.out.println(s);
+        // nullなら適当な例外とか
+        Optional<String> port = Optional.ofNullable(getEnv("port"));
+        String po = port.orElseThrow(IllegalArgumentException::new);
+        System.out.println(po);
+
 
     }
 
     public static String getEnv(String envType) {
+        if (envType.equals("port")) return  null;
         return  "127.0.0.1";
     }
 
