@@ -42,7 +42,11 @@ public class OptionalSample {
         Optional<Integer> accountId = tAccountInfoOptional.map(TAccountInfo::getAccountId);
         System.out.println(accountId.orElse(-1));
 
-
+        //filter
+        Optional<String> fil = Optional.ofNullable(getHoge());
+        //filterに合致すればthisを返す。
+        Optional<String> s1 = fil.filter(k -> k.length() >= 2);
+        System.out.println(s1);
 
     }
 
