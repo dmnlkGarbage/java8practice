@@ -12,6 +12,6 @@ public class LambdaSort {
 
 
 
-        Arrays.sort(ts, (s, t) -> Integer.compare(s.length(), t.length());
+        Arrays.sort(ts, (String s, String t) -> Integer.compare(s.length(), t.length()));
     }
 }
