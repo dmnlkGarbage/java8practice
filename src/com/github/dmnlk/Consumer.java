@@ -20,5 +20,10 @@ public class Consumer {
         Function<String, String > compose = wrapDoubleQuote.compose(wrapSingleQuote);
         String result = compose.apply("hoge");
         System.out.println(result);
+
+        //andThenだと逆順適用
+        Function<String, String> andThen = wrapDoubleQuote.andThen(wrapSingleQuote);
+        String andThenResult = andThen.apply("hoge");
+        System.out.println(andThenResult);
     }
 }
