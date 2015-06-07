@@ -2,6 +2,7 @@ package com.github.dmnlk;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  * @author dmnlk
@@ -46,5 +47,11 @@ public class ConsumerSample {
 
         hoge.andThen(fuga).accept("ora");
 
+
+        //Supplier<T>
+
+        // T型を返す。getで取得出来る
+        Supplier<String> supplier = () -> "supplier!";
+        System.out.println(supplier.get());
     }
 }
