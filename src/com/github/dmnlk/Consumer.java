@@ -25,5 +25,12 @@ public class Consumer {
         Function<String, String> andThen = wrapDoubleQuote.andThen(wrapSingleQuote);
         String andThenResult = andThen.apply("hoge");
         System.out.println(andThenResult);
+
+        //identifyは何もしない
+        Function<String, String> identify = Function.identity();
+        System.out.println(identify.apply("aaaaaa"));
+
+       
+
     }
 }
