@@ -39,5 +39,12 @@ public class ConsumerSample {
         // acceptは受け取ったものをそのまま使う
         Consumer<String> consumer = str -> System.out.println("consumer :" + str);
         consumer.accept("hoge");
+
+        //andthenは大体同じ。最後にacceptに食わせる
+        Consumer<String> hoge = str -> System.out.println("hoge" + str);
+        Consumer<String> fuga = str -> System.out.println("fuga" + str);
+
+        hoge.andThen(fuga).accept("ora");
+
     }
 }
