@@ -1,5 +1,6 @@
 package com.github.dmnlk;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
@@ -33,7 +34,10 @@ public class ConsumerSample {
         Function<String, String> identify = Function.identity();
         System.out.println(identify.apply("aaaaaa"));
 
-       // ConsumerSample<T>
+        // ConsumerSample<T>
 
+        // acceptは受け取ったものをそのまま使う
+        Consumer<String> consumer = str -> System.out.println("consumer :" + str);
+        consumer.accept("hoge");
     }
 }
