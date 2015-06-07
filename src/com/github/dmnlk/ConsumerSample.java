@@ -5,8 +5,11 @@ import java.util.function.Function;
 /**
  * @author dmnlk
  */
-public class Consumer {
+public class ConsumerSample {
     public static void main(String[] args) {
+
+
+        // Function<T, R>
         //T型引数を受け取りR型を返す
         Function<String, Integer> function = str -> Integer.parseInt(str);
         System.out.println(function.apply("2"));
@@ -30,7 +33,7 @@ public class Consumer {
         Function<String, String> identify = Function.identity();
         System.out.println(identify.apply("aaaaaa"));
 
-       
+       // ConsumerSample<T>
 
     }
 }
