@@ -2,6 +2,7 @@ package com.github.dmnlk;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 /**
@@ -53,5 +54,12 @@ public class ConsumerSample {
         // T型を返す。getで取得出来る
         Supplier<String> supplier = () -> "supplier!";
         System.out.println(supplier.get());
+
+        //Predicate<T>
+
+        //boolean返す
+        Predicate<String> predicate = str -> str.isEmpty();
+        System.out.println(predicate.test(""));
+        System.out.println(predicate.test("hoge"));
     }
 }
