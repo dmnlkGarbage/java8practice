@@ -61,5 +61,10 @@ public class ConsumerSample {
         Predicate<String> predicate = str -> str.isEmpty();
         System.out.println(predicate.test(""));
         System.out.println(predicate.test("hoge"));
+
+        //isEqualで同値かを明示的に返す
+        Predicate<String> isHoge = Predicate.isEqual("hoge");
+        System.out.println(isHoge.test("hoge"));
+        System.out.println(isHoge.test("fuga"));
     }
 }
