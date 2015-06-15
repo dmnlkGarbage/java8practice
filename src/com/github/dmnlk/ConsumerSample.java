@@ -66,5 +66,13 @@ public class ConsumerSample {
         Predicate<String> isHoge = Predicate.isEqual("hoge");
         System.out.println(isHoge.test("hoge"));
         System.out.println(isHoge.test("fuga"));
+
+        Predicate<String> isUpperCase = string -> string.matches("[A-Z]+");
+        Predicate<String> isAlphabet  = string -> string.matches("[a-zA-Z]+");
+
+        Predicate<String> predic = isAlphabet.and(isUpperCase);
+
+        System.out.println(predic.test("HOGE"));
+        System.out.println(predic.test("hoge"));
     }
 }
