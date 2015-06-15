@@ -74,5 +74,16 @@ public class ConsumerSample {
 
         System.out.println(predic.test("HOGE"));
         System.out.println(predic.test("hoge"));
+
+
+
+        Predicate<String> isUpperCase1 = string -> string.matches("[A-Z]+");
+        Predicate<String> isNumber    = string -> string.matches("\\d+");
+
+        Predicate<String> predicate2 = isNumber.or(isUpperCase1);
+
+        System.out.println(predicate2.test("HOGE"));
+        System.out.println(predicate2.test("1234"));
+        System.out.println(predicate2.test("hoge"));
     }
 }
