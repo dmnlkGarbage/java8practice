@@ -85,5 +85,12 @@ public class ConsumerSample {
         System.out.println(predicate2.test("HOGE"));
         System.out.println(predicate2.test("1234"));
         System.out.println(predicate2.test("hoge"));
+
+        Predicate<String> isEmpty = string -> string.isEmpty();
+
+        Predicate<String> isNotEmpty = isEmpty.negate();
+
+        System.out.println(isNotEmpty.test("hoge"));
+        System.out.println(isNotEmpty.test(""));
     }
 }
