@@ -93,5 +93,9 @@ public class ConsumerSample {
         BinaryOperator<Integer> maxBy = BinaryOperator.maxBy(Integer::compare);
         int max = maxBy.apply(21, 10);
         System.out.println(max);
+
+        BinaryOperator<Integer> minBy = BinaryOperator.minBy(Integer::compare);
+        int min = minBy.apply(21, 10);
+        System.out.println(min);
     }
 }
