@@ -97,5 +97,8 @@ public class ConsumerSample {
         BinaryOperator<Integer> minBy = BinaryOperator.minBy(Integer::compare);
         int min = minBy.apply(21, 10);
         System.out.println(min);
+
+        ToIntFunction<String> getLength = string -> string.length();
+        System.out.println(getLength.applyAsInt("hoge"));
     }
 }
