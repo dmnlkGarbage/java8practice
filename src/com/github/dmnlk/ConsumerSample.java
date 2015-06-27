@@ -100,5 +100,7 @@ public class ConsumerSample {
 
         ToIntFunction<String> getLength = string -> string.length();
         System.out.println(getLength.applyAsInt("hoge"));
+        ToIntBiFunction<Integer, Integer> add = (a, b) -> a + b;
+        System.out.println(add.applyAsInt(12, 53));
     }
 }
