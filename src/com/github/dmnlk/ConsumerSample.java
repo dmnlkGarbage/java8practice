@@ -105,6 +105,10 @@ public class ConsumerSample {
         ToIntBiFunction<Integer, Integer> add = (a, b) -> a + b;
         System.out.println(add.applyAsInt(12, 53));
 
+
+        ToIntBiFunction<Integer, Integer> add = (a, b) -> a + b;
+        System.out.println(add.applyAsInt(12, 53));
+
         List<String> list = Arrays.asList("hoge", "fuga", "piyo");
 
         forEach(list, (value, index) -> {
